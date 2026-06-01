@@ -158,6 +158,8 @@ bugfix/*         普通缺陷修复分支
 
 Git Flow 是一种比较完整、规范的分支模型，适合版本节奏明确、上线流程比较正式的项目。
 
+![Git Flow 分支协作流程](assets/branching/git-flow.png)
+
 ### 核心分支
 
 ```text
@@ -305,6 +307,8 @@ git merge release/v1.0.0
 
 GitHub Flow 更简单，适合持续交付、快速迭代的项目。
 
+![GitHub Flow 分支协作流程](assets/branching/github-flow.png)
+
 ### 核心思路
 
 ```text
@@ -355,6 +359,8 @@ git push origin feature/todo-create
 
 GitLab Flow 介于 Git Flow 和 GitHub Flow 之间。它通常会结合环境分支或发布分支。
 
+![GitLab Flow 分支协作流程](assets/branching/gitlab-flow.png)
+
 ### 常见模式一：环境分支
 
 ```text
@@ -395,6 +401,8 @@ release/v1.1.0
 ## 4. Trunk Based Development 主干开发
 
 主干开发的核心是：所有人尽量频繁地把代码合入主干分支。
+
+![主干开发分支协作流程](assets/branching/trunk-based-development.png)
 
 ### 核心思路
 
