@@ -26,6 +26,7 @@ TaskNest 是一个使用 Go、Gin、Gorm 和 HTTP 请求构建的 Todo 待办任
 
 - [软件项目交付流程说明](docs/software-delivery-flow.md)
 - [软件项目交付流程图](docs/assets/software-delivery-flow.png)
+- [Git 分支协作策略说明](docs/git-branching-strategies.md)
 
 ## 项目结构
 
