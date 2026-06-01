@@ -30,6 +30,9 @@ TaskNest 是一个使用 Go、Gin、Gorm 和 HTTP 请求构建的 Todo 待办任
 - [Go Modules 依赖管理说明](docs/go-modules-guide.md)
 - [Gin 和 Gorm 框架学习说明](docs/gin-gorm-guide.md)
 - [产品文档和技术设计文档学习说明](docs/product-and-technical-design-docs-guide.md)
+- [日志、Trace、PProf 和 ELK 学习说明](docs/logging-tracing-pprof-elk-guide.md)
+- [部署、Docker、K8s、Jenkins 和自动化流水线学习说明](docs/deployment-docker-k8s-jenkins-guide.md)
+- [微服务、注册中心、配置中心、网关、Nacos 和 K8s 学习说明](docs/microservices-registry-config-gateway-nacos-k8s-guide.md)
 - [AI 编程助手核心概念学习说明](docs/ai-agent-concepts-guide.md)
 
 ## 项目结构
