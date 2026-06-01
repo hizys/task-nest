@@ -22,17 +22,47 @@ TaskNest 是一个使用 Go、Gin、Gorm 和 HTTP 请求构建的 Todo 待办任
 - **部署上线**：学习如何打包程序、准备运行环境、启动服务，并理解灰度和上线流程。
 - **软件项目交付流程**：学习需求评审、技术设计、技术评审、用例评审、技术连调、提测、灰度、上线这一整套流程。
 
-配套说明文档：
+配套说明文档建议按下面的阶段阅读。同一个阶段里的文档可以并行看，不需要完全按一篇一篇死记。
+
+### 第一阶段：先理解项目怎么被开发出来
 
 - [软件项目交付流程说明](docs/software-delivery-flow.md)
 - [软件项目交付流程图](docs/assets/software-delivery-flow.png)
+- [产品文档和技术设计文档学习说明](docs/product-and-technical-design-docs-guide.md)
 - [Git 分支协作策略说明](docs/git-branching-strategies.md)
 - [Go Modules 依赖管理说明](docs/go-modules-guide.md)
+
+### 第二阶段：掌握后端接口和项目基础
+
+- [HTTP 和 RESTful API 基础学习说明](docs/http-restful-api-guide.md)
 - [Gin 和 Gorm 框架学习说明](docs/gin-gorm-guide.md)
-- [产品文档和技术设计文档学习说明](docs/product-and-technical-design-docs-guide.md)
+- [数据库、SQL、事务、索引和慢 SQL 优化学习说明](docs/database-sql-transaction-index-guide.md)
+
+### 第三阶段：补齐常见业务能力
+
+- [认证、登录、Token、JWT 和权限设计学习说明](docs/auth-jwt-permission-guide.md)
+- [缓存和 Redis 学习说明](docs/cache-redis-guide.md)
+- [消息队列 MQ 学习说明](docs/message-queue-guide.md)
+- [安全基础学习说明](docs/security-basics-guide.md)
+
+### 第四阶段：学会测试、排查和观测服务
+
+- [Go/Gin 后端测试体系学习说明](docs/testing-guide.md)
 - [日志、Trace、PProf 和 ELK 学习说明](docs/logging-tracing-pprof-elk-guide.md)
+- [监控和告警学习说明](docs/monitoring-alerting-guide.md)
+
+### 第五阶段：学习部署和自动化交付
+
 - [部署、Docker、K8s、Jenkins 和自动化流水线学习说明](docs/deployment-docker-k8s-jenkins-guide.md)
+- [CI/CD 深入学习说明](docs/cicd-advanced-guide.md)
+
+### 第六阶段：理解更大的系统架构
+
+- [系统设计基础学习说明](docs/system-design-basics-guide.md)
 - [微服务、注册中心、配置中心、网关、Nacos 和 K8s 学习说明](docs/microservices-registry-config-gateway-nacos-k8s-guide.md)
+
+### 第七阶段：提高 AI 辅助开发效率
+
 - [AI 编程助手核心概念学习说明](docs/ai-agent-concepts-guide.md)
 
 ## 项目结构
