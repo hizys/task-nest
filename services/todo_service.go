@@ -2,6 +2,7 @@ package services
 
 import (
 	"errors"
+	"log"
 
 	"gorm.io/gorm"
 
@@ -26,6 +27,12 @@ func CreateTodo(req models.CreateTodoRequest) (models.Todo, error) {
 
 	// Create 会执行 insert，把 todo 保存到数据库。
 	err := config.DB.Create(&todo).Error
+	if err != nil {
+		log.Printf("[ERROR] create todo failed: title=%q err=%v", req.Title, err)
+		return todo, err
+	}
+
+	log.Printf("[INFO] create todo success: id=%d title=%q", todo.ID, todo.Title)
 	return todo, err
 }
 
@@ -43,6 +50,12 @@ func ListTodos(status string) ([]models.Todo, error) {
 	}
 
 	err := query.Find(&todos).Error
+	if err != nil {
+		log.Printf("[ERROR] list todos failed: status=%q err=%v", status, err)
+		return nil, err
+	}
+
+	log.Printf("[INFO] list todos success: status=%q count=%d", status, len(todos))
 	return todos, err
 }
 
@@ -52,7 +65,12 @@ func GetTodoByID(id uint) (models.Todo, error) {
 
 	err := config.DB.First(&todo, id).Error
 	if errors.Is(err, gorm.ErrRecordNotFound) {
+		log.Printf("[WARN] get todo not found: id=%d", id)
 		return todo, errors.New("任务不存在")
+	}
+	if err != nil {
+		log.Printf("[ERROR] get todo failed: id=%d err=%v", id, err)
+		return todo, err
 	}
 
 	return todo, err
@@ -70,6 +88,12 @@ func UpdateTodo(id uint, req models.UpdateTodoRequest) (models.Todo, error) {
 
 	// Save 会根据主键判断是更新还是新增；这里 todo 已有 ID，所以会执行 update。
 	err = config.DB.Save(&todo).Error
+	if err != nil {
+		log.Printf("[ERROR] update todo failed: id=%d err=%v", id, err)
+		return todo, err
+	}
+
+	log.Printf("[INFO] update todo success: id=%d title=%q", todo.ID, todo.Title)
 	return todo, err
 }
 
@@ -86,6 +110,12 @@ func UpdateTodoStatus(id uint, status string) (models.Todo, error) {
 
 	todo.Status = status
 	err = config.DB.Save(&todo).Error
+	if err != nil {
+		log.Printf("[ERROR] update todo status failed: id=%d status=%q err=%v", id, status, err)
+		return todo, err
+	}
+
+	log.Printf("[INFO] update todo status success: id=%d status=%q", todo.ID, todo.Status)
 	return todo, err
 }
 
@@ -96,7 +126,14 @@ func DeleteTodo(id uint) error {
 		return err
 	}
 
-	return config.DB.Delete(&todo).Error
+	err = config.DB.Delete(&todo).Error
+	if err != nil {
+		log.Printf("[ERROR] delete todo failed: id=%d err=%v", id, err)
+		return err
+	}
+
+	log.Printf("[INFO] delete todo success: id=%d", id)
+	return nil
 }
 
 // IsValidStatus 判断任务状态是否合法。
